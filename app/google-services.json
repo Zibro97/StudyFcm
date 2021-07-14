@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "709277482682",
+    "project_id": "study-fcm-6095d",
+    "storage_bucket": "study-fcm-6095d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:709277482682:android:2fbab9d3cff66dc86d0c83",
+        "android_client_info": {
+          "package_name": "com.zibroit.studyfcm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "709277482682-vgjlsfsnn9sr5btj8h74dc2gtdb8ccp4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPu6PmSiTqgWSRoQ42S37HRRBD-zJS8Jk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "709277482682-vgjlsfsnn9sr5btj8h74dc2gtdb8ccp4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
