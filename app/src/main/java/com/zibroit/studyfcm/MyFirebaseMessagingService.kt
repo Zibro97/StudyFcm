@@ -29,6 +29,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
         val type = remotemessage.data["type"]
             ?.let{ NotificationType.valueOf(it) }
+        //.let : 지정된 값이 null이 아닌 경우에 코드를 실행해야 하는 경우.
         val title = remotemessage.data["title"]
         val message = remotemessage.data["message"]
         type ?: return
@@ -72,14 +73,9 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             NotificationType.EXPANDABLE -> {
                 notificationBuilder.setStyle(
                     NotificationCompat.BigTextStyle()
-                        .bigText("😀 😃 😄 😁 😆 😅 😂 🤣 🥲 ☺️ 😊 😇 " +
-                                "🙂 🙃 😉 😌 😍 🥰 😘 😗 😙 😚 😋 😛 " +
-                                "😝 😜 🤪 🤨 🧐 🤓 😎 🥸 🤩 🥳 😏 😒 " +
-                                "😞 😔 😟 😕 🙁 ☹️ 😣 😖 😫 😩 🥺 😢 " +
-                                "😭 😤 😠 😡 🤬 🤯 😳 🥵 🥶 😱 😨 😰 " +
-                                "😥 😓 🤗 🤔 🤭 🤫 🤥 😶 😐 😑 😬 🙄 " +
-                                "😯 😦 😧 😮 😲 🥱 😴 🤤 😪 😵 🤐 🥴 " +
-                                "🤢 🤮 🤧 😷 🤒 🤕")
+                        .bigText("확장형 Notification"
+                        +"FCM"
+                        +"Notification")
                 )
             }
             /*커스텀*/
@@ -88,7 +84,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
                     .setStyle(NotificationCompat.DecoratedCustomViewStyle())
                     .setCustomContentView(
                         RemoteViews(packageName, R.layout.view_custom_notification)
-                            .apply {
+                            .apply { // 수신 객체 람다 내부에서 수신 객체의 함수를 사용하지 않고 수신 객체 자신을 다시 반환하려는 경우에 사용. 주로 객체 초기화
                                 setTextViewText(R.id.title,title)
                                 setTextViewText(R.id.message,message)
                             })

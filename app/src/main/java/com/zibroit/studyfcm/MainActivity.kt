@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import com.google.android.datatransport.runtime.dagger.internal.DoubleCheck.lazy
 import com.google.firebase.messaging.FirebaseMessaging
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         addOnCompleteListener {
             if(it.isSuccessful){
                 firebase_token_textview.text = it.result
+                Log.d("TAG", "Token: ${it.result}")
             }
         }
     }
